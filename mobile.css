@@ -1,0 +1,29 @@
+.matter{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#image{
+    visibility: hidden;
+}
+
+.column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+}
+
+.navbar{
+    background-color: rgba(255,255,255,0.5) !important;
+}
+
+.padding-text{
+    padding: 7vh;
+}
+
+.black-matter{
+    padding-left: 30px;
+    background-color: black;
+    color: white;
+    padding-right: 20vh !important;
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="Images/favicon.svg">
+  <link rel="stylesheet" href="bs/css/bootstrap.css">
+  <link rel="stylesheet" href="bs/css/mdb.css">
+  <link rel="stylesheet" href="bs/css/style.css">
+  <link rel="stylesheet" media="(max-width:500px)" href="mobile.css">
+  <link rel="stylesheet" media="(min-width:501px) and (max-width:768px)" href="tablet.css">
+  <link rel="stylesheet" media="(min-width:769px) and (max-width:1200px)" href="laptop.css">
+  <link rel="stylesheet" media="(min-width:1201px)" href="wide.css">
+  <title>Silver Hat | Projects</title>
+
+  <style>
+
+    .custom-cursor {
+      cursor: url('Images/cursor.png'), pointer;
+    }
+
+    .navbar{
+      box-shadow: none !important;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+      background-color: whitesmoke;
+    }
+    .active-head{
+      color: grey !important;
+    }
+    a{
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+    }
+    ::-webkit-scrollbar {
+      display: none;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    #image {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      box-shadow: none;
+      z-index: 1;
+    }
+
+
+    body{
+      background-color: whitesmoke;
+      color: black;
+    }
+    h4{
+      font-family: 'Playfair Display', serif;
+      text-align: left;
+      color: black;
+    }
+    .image-container {
+      overflow: hidden;
+    }
+
+    .image-container img {
+      filter: grayscale(0%);
+      transition: filter 0.3s ease;
+    }
+
+    .image-container img:hover {
+      filter: grayscale(100%);
+    }
+
+
+
+    .footer-text{
+      font-family: 'Didact Gothic', sans-serif;
+      color: black !important;
+    }
+    .links{
+      font-family: 'Didact Gothic', sans-serif;
+      font-size: 15px;
+    }
+    .links a{
+      color: #0d0d0d !important;
+      margin-right: 20px;
+    }
+    .footer-box{
+      height: 40vh;
+      width: 100%;
+      background-color: white !important;
+    }
+
+  </style>
+</head>
+<body>
+
+<!--------------navbar-------------->
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+  <a class="navbar-brand" href="index.html">
+    <img src="Images/Silver_logo.png" class="custom-cursor" width="100px">
+  </a>
+  <button class="navbar-toggler" data-toggle="collapse" data-target="#simpleNavbar">
+    <span class="navbar-toggler-icon custom-cursor"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="simpleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link active-head custom-cursor" href="Projects.html"><b>PROJECTS</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-cursor" href="Illustrations.html"><b>EXPERIMENTS</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-cursor" href="Sketchbook.html"><b>SKETCHBOOK</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-cursor" href="About_Me.html"><b>ABOUT ME</b></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!----------------------Content------------------->
+<div class="matter main-body mb-5">
+
+  <!-------------Rotating image---------------->
+  <div>
+    <img id="image" src="Images/Rotate_logo.png" alt="Rotating Image">
+  </div>
+
+  <!----------------Images---------------------->
+  <div class="row">
+    <div class="col-md-6 mb-4 image-container">
+      <a href="Un-taboo%20with%20Jane.html"><img src="Images/Cover/Jane.png" class="custom-cursor" width="100%" alt="">
+      <h4 class="pt-2">The One Where Laughter Educates</h4></a>
+    </div>
+    <div class="col-md-6 mb-4 image-container">
+      <a href="Silver%20Hat.html"><img src="Images/Cover/Silver.png" class="custom-cursor" width="100%" alt="">
+      <h4 class="pt-2">The One With Hat-tastic Discovery</h4></a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-4 image-container">
+      <a href="Reincarne.html"><img src="Images/Cover/Reincarne.png" class="custom-cursor" width="100%" alt="">
+      <h4 class="pt-2">The One with Paper Couture</h4></a>
+    </div>
+    <div class="col-md-6 mb-4 image-container">
+      <a href="Virasat.html"><img src="Images/Cover/Viraasat.png"  class="custom-cursor" width="100%" alt="">
+      <h4 class="pt-2">The One Where I fell In Love With My Culture</h4></a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-4 image-container">
+      <a href="JCDecaux.html"><img src="Images/Cover/JCDecaux.png" class="custom-cursor" width="100%" alt="">
+      <h4 class="pt-2">The One With GenZ's Billborad Affair</h4></a>
+    </div>
+    <div class="col-md-6 mb-4 image-container">
+      <a href="Enigma.html"><img src="Images/Cover/Enigma.png" class="custom-cursor" width="100%" alt="">
+      <h4 class="pt-2">The One With Kerning Puzzles</h4></a>
+    </div>
+  </div>
+  
+</div>
+
+<!----------------Footer---------------------->
+
+<hr>
+
+<div class="footer-box padding-text">
+  <h5 class="footer-text"><b>
+    <b>Shweta</b> is an emerging designer based in New Delhi, India.
+    <br>She loves telling stories through an amalgation of <b>illustration, animation, and typography.</b></b>
+  </h5>
+  <div class="links mt-4">
+    <a href="https://www.instagram.com/your_silver_hat/" target="_blank" class="custom-cursor"><u>Instagram</u></a>
+    <a href="https://www.behance.net/shwetasingh43" target="_blank" class="custom-cursor"><u>Behance</u></a>
+    <a href="mailto:silverhatexpress@gmail.com" target="_blank" class="custom-cursor"><u>Email</u></a>
+    <a href="https://www.artstation.com/shweta6" target="_blank" class="custom-cursor"><u>ArtStation</u></a>
+    <a href="https://www.linkedin.com/in/shweta-0609aa222/" target="_blank" class="custom-cursor"><u>LinkedIn</u></a>
+  </div>
+</div>
+
+
+<script>
+  const image = document.getElementById('image');
+  let isScrolling = false;
+  let rotationInterval;
+  let rotationAngle = 0;
+  const rotationSpeed = 1; // Adjust the rotation speed as needed
+
+  function rotateImage() {
+    rotationAngle += rotationSpeed;
+    image.style.transform = `rotate(${rotationAngle}deg)`;
+  }
+
+  function startRotation() {
+    rotationInterval = setInterval(() => {
+      rotateImage();
+    }, 4); // Adjust the rotation speed as needed
+  }
+
+  function stopRotation() {
+    clearInterval(rotationInterval);
+  }
+
+  function handleScroll() {
+    if (!isScrolling) {
+      isScrolling = true;
+      startRotation();
+    }
+
+    clearTimeout(isScrolling);
+    isScrolling = setTimeout(() => {
+      isScrolling = false;
+      stopRotation();
+    }, 200); // Adjust the delay value as needed
+  }
+
+  window.addEventListener('scroll', handleScroll);
+
+</script>
+<script src="bs/js/jquery.js"></script>
+<script src="bs/js/popper.js"></script>
+<script src="bs/js/bootstrap.js"></script>
+<script src="bs/js/mdb.js"></script>
+
+</body>
+</html>
+

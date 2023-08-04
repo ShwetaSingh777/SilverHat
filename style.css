@@ -1,0 +1,66 @@
+body{
+    background-color: teal;
+}
+
+.container{
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    padding: 100px;
+    font-size: 25px;
+}
+
+.container h2{
+    display: none;
+}
+
+div img{
+    width: 80%;
+    box-shadow: 0 0 5px black;
+    border-radius: 5px;
+}
+
+
+/*-----------------------------------Media Queries For Mobile-----------------------*/
+
+@media  (max-width: 500px) {
+    body{
+        background-color: limegreen;
+    }
+    #mobile{
+        display: block;
+    }
+}
+
+/*-----------------------------------Media Queries For Tablet-----------------------*/
+
+@media (min-width: 501px) and (max-width: 768px) {
+    body{
+        background-color: orangered;
+    }
+    #tablet{
+        display: block;
+    }
+}
+
+/*-----------------------------------Media Queries For Laptop-----------------------*/
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    body{
+        background-color: purple;
+    }
+    #laptop{
+        display: block;
+    }
+}
+
+/*-----------------------------------Media Queries For Mobile-----------------------*/
+
+@media  (min-width: 1201px) {
+    body{
+        background-color: deeppink;
+    }
+    #wide{
+        display: block;
+    }
+}

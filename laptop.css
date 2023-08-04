@@ -1,0 +1,31 @@
+.matter{
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+#image{
+    margin-right: 15vh;
+    margin-bottom: 10vh;
+    width: 15%;
+}
+
+.column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+}
+
+.navbar{
+    background-color: rgba(50,50,50,0) !important;
+}
+
+.padding-text{
+    padding: 10vh;
+}
+
+.black-matter{
+    padding-left: 60px;
+    background-color: black;
+    color: white;
+    padding-right: 20vh !important;
+}

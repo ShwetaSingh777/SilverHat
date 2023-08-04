@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Images/favicon.svg">
+    <link rel="stylesheet" href="bs/css/bootstrap.css">
+    <link rel="stylesheet" href="bs/css/mdb.css">
+    <link rel="stylesheet" href="bs/css/style.css">
+    <link rel="stylesheet" media="(max-width:500px)" href="mobile.css">
+    <link rel="stylesheet" media="(min-width:501px) and (max-width:768px)" href="tablet.css">
+    <link rel="stylesheet" media="(min-width:769px) and (max-width:1200px)" href="laptop.css">
+    <link rel="stylesheet" media="(min-width:1201px)" href="wide.css">
+    <title>Silver Hat</title>
+
+    <style>
+        .navbar{
+            box-shadow: none !important;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 22;
+            height: 10vh;
+        }
+        a{
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        h5{
+            font-family: 'Poppins', sans-serif;
+            margin-top: 2vh;
+            margin-bottom: 4vh;
+        }
+        #image {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            box-shadow: none;
+            z-index: 21;
+        }
+
+
+        body {
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .interaction{
+            height: 80vh;
+        }
+
+        #hero {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            background: white;
+            z-index: 2;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        #hero-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
+            z-index: 20;
+            color: white;
+            transform: scale(1.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #hero-text > div {
+            background: rgba(0, 0, 0, 0);
+            padding: 50px;
+            font-weight: 500;
+            /* max-width: 50%; */
+            /* margin: 0 auto; */
+            font-size: 3rem;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+<!---------Navbar---------->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+    <a class="navbar-brand" href="index.html">
+    </a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#simpleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="simpleNavbar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="Projects.html"><b>PROJECTS</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Illustrations.html"><b>ILLUSTRATIONS</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Sketchbook.html"><b>SKETCHBOOK</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="About_Me.html"><b>ABOUT ME</b></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-------------Rotating image---------------->
+<div>
+    <img id="image" src="Images/Rotate_logo.png" alt="Rotating Image">
+</div>
+
+<div class="interaction">
+    <canvas id="glitterCanvas"></canvas>
+    <div id="hero-text">
+        <div>
+            <img src="Images/Silver_logo.png" width="60%" alt="">
+        </div>
+    </div>
+</div>
+<script>
+    const image = document.getElementById('image');
+    let isScrolling = false;
+    let rotationInterval;
+    let rotationAngle = 0;
+    const rotationSpeed = 1; // Adjust the rotation speed as needed
+
+    function rotateImage() {
+        rotationAngle += rotationSpeed;
+        image.style.transform = `rotate(${rotationAngle}deg)`;
+    }
+
+    function startRotation() {
+        rotationInterval = setInterval(() => {
+            rotateImage();
+        }, 4); // Adjust the rotation speed as needed
+    }
+
+    function stopRotation() {
+        clearInterval(rotationInterval);
+    }
+
+    function handleScroll() {
+        if (!isScrolling) {
+            isScrolling = true;
+            startRotation();
+        }
+
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(() => {
+            isScrolling = false;
+            stopRotation();
+        }, 200); // Adjust the delay value as needed
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+</script>
+<script>
+    const cvs = document.getElementById("glitterCanvas");
+    const c = cvs.getContext("2d");
+
+    cvs.width = window.innerWidth;
+    cvs.height = window.innerHeight;
+
+    window.addEventListener("resize", function() {
+        cvs.width = window.innerWidth;
+        cvs.height = window.innerHeight;
+    });
+
+    let mouse = {
+        x: undefined,
+        y: undefined
+    };
+
+    window.addEventListener("mousemove", function(e) {
+        mouse.x = event.x;
+        mouse.y = event.y;
+    });
+
+    window.addEventListener("touchmove", function(e) {
+        e.preventDefault(); // Prevent default touch behavior
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+    });
+
+    // interactivity for touch devices
+    cvs.addEventListener("touchstart", function(e) {
+        glitterCircles.forEach(circle => {
+            if (
+                Math.abs(e.touches[0].clientX - circle.x) < 100 &&
+                Math.abs(e.touches[0].clientY - circle.y) < 100 &&
+                circle.opacity < 1
+            ) {
+                circle.opacity += 0.05;
+            }
+        });
+    });
+
+    cvs.addEventListener("touchend", function(e) {
+        glitterCircles.forEach(circle => {
+            if (circle.opacity > 0) {
+                circle.opacity -= 0.05;
+                circle.opacity = Math.max(0, circle.opacity);
+            }
+        });
+    });
+
+
+    class GlitterCircle {
+        constructor(x, y, dx, dy, radius, color) {
+            this.x = x;
+            this.y = y;
+            this.dx = dx;
+            this.dy = dy;
+            this.radius = radius;
+            this.color = color;
+            this.opacity = 1;
+        }
+
+        draw() {
+            c.beginPath();
+            c.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            c.closePath();
+            c.save();
+            c.globalAlpha = this.opacity;
+            c.fillStyle = this.color;
+            c.shadowBlur = 10;
+            c.shadowColor = this.color;
+            c.fill();
+            c.restore();
+        }
+
+        update() {
+            if (
+                this.x + this.radius >= window.innerWidth ||
+                this.x - this.radius <= 0
+            ) {
+                this.dx = -this.dx;
+            }
+
+            if (
+                this.y + this.radius >= window.innerHeight ||
+                this.y - this.radius <= 0
+            ) {
+                this.dy = -this.dy;
+            }
+
+            this.x += this.dx;
+            this.y += this.dy;
+
+            // interactivity
+            if (
+                Math.abs(mouse.x - this.x) < 180 &&
+                Math.abs(mouse.y - this.y) < 180 &&
+                this.opacity < 1
+            ) {
+                this.opacity += 0.08;
+            } else if (this.opacity > 0) {
+                this.opacity -= 0.08;
+                this.opacity = Math.max(0, this.opacity);
+            }
+
+        }
+    }
+
+    let glitterCircles = [];
+
+    for (let i = 0; i < 400; i++) {
+        let radius = Math.random() * 10 + 2;
+        let x = Math.random() * window.innerWidth;
+        let dx = (Math.random() - 0.5) * 1;
+        let y = Math.random() * window.innerHeight;
+        let dy = (Math.random() - 0.5) * 1;
+        let colorArray = ["#FFFFFF", "#EDEDED", "#C0C0C0", "#D3D3D3"];
+        let color = colorArray[Math.floor(Math.random() * colorArray.length)];
+        glitterCircles.push(new GlitterCircle(x, y, dx, dy, radius, color));
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        c.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+        glitterCircles.forEach(circle => {
+            circle.update();
+            circle.draw();
+        });
+    }
+
+    animate();
+</script>
+
+<script src="bs/js/jquery.js"></script>
+<script src="bs/js/popper.js"></script>
+<script src="bs/js/bootstrap.js"></script>
+<script src="bs/js/mdb.js"></script>
+
+</body>
+</html>
+
